@@ -4,27 +4,32 @@ This file provides context to AI coding assistants (GitHub Copilot, Continue, An
 
 ## Environment Setup
 
-This project uses **Miniforge/Conda** for environment management.
+**Goal**: A Python environment (Conda or venv) with `requirements.txt` installed, active in VS Code.
 
-### Creating the environment
+### 1. Check Git
+Run `git --version` in terminal.
+- If missing on **Windows**: Install [Git for Windows](https://gitforwindows.org/).
+- If missing on **Mac**: Run `xcode-select --install`.
 
-```bash
-conda create -n csol208 python=3.12 -y
-conda activate csol208
-pip install ibis-framework[duckdb] altair pandas jupyter
-```
+### 2. Create Python Environment
 
-### Activating
+**Option A: Conda (Preferred)**
+If user has Miniconda/Anaconda:
+1. `conda create -n csol208 python=3.11 -y`
+2. `conda activate csol208`
+3. `pip install -r requirements.txt`
 
-```bash
-conda activate csol208
-```
+**Option B: venv (No Conda)**
+1. `python3 -m venv .venv`
+2. **Windows**: `.venv\Scripts\activate` | **Mac/Linux**: `source .venv/bin/activate`
+3. `pip install -r requirements.txt`
 
-### VS Code interpreter
+### 3. VS Code Activation
+1. Open any `.py` file.
+2. Click the interpreter version in the bottom-right status bar (or `Ctrl+Shift+P` -> "Python: Select Interpreter").
+3. Select `csol208` (Conda) or `.venv` (Virtual Env).
+4. Restart terminal to ensure it activates automatically.
 
-After setup: Cmd/Ctrl+Shift+P → "Python: Select Interpreter" → choose `csol208`
-
----
 
 ## Coding Conventions
 

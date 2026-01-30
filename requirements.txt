@@ -1,0 +1,5 @@
+ibis-framework[duckdb]
+altair
+pandas
+jupyter
+streamlit
